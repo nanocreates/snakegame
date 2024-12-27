@@ -19,6 +19,12 @@
                     <option value="hard">Hard</option>
                 </select>
             </div>
+            <div class="virtual-controls-toggle">
+                <label>
+                    <input type="checkbox" id="virtual-controls-toggle">
+                    Enable virtual controls for mobile
+                </label>
+            </div>
             <div class="nickname-buttons">
                 <button onclick="setNickname()">Start</button>
                 <button onclick="playAsGuest()">Play as Guest</button>
@@ -31,6 +37,16 @@
                 <span>Score: </span><span id="score">0</span>
             </div>
             <canvas id="gameCanvas" width="400" height="400"></canvas>
+            <div id="virtual-controls" style="display: none;">
+                <div class="arrow-keys">
+                    <button id="up-key" class="arrow-key">↑</button>
+                    <div class="horizontal-keys">
+                        <button id="left-key" class="arrow-key">←</button>
+                        <button id="right-key" class="arrow-key">→</button>
+                    </div>
+                    <button id="down-key" class="arrow-key">↓</button>
+                </div>
+            </div>
             <div class="controls">
                 <button id="startButton" onclick="startGame()">Play</button>
                 <button id="pauseButton" onclick="togglePause()" style="display: none;">Pause</button>

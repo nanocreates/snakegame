@@ -10,6 +10,7 @@ let gameSpeed = 100;
 let playerName = '';
 let isPaused = false;
 let isFirstGame = true;
+let virtualControlsEnabled = false;
 
 // Add these variables at the top with other game variables
 const GAME_SPEEDS = {
@@ -22,6 +23,7 @@ const GAME_SPEEDS = {
 window.onload = function() {
     canvas = document.getElementById('gameCanvas');
     ctx = canvas.getContext('2d');
+    setupVirtualControls();
     initializeGame();
 };
 
@@ -206,4 +208,44 @@ function setupGameDisplay() {
     
     document.getElementById('nickname-section').style.display = 'none';
     document.getElementById('game-section').style.display = 'block';
+    
+    // Show virtual controls if enabled
+    if (virtualControlsEnabled) {
+        document.getElementById('virtual-controls').style.display = 'block';
+    }
+}
+
+// Add this function to handle virtual controls setup
+function setupVirtualControls() {
+    const virtualControlsToggle = document.getElementById('virtual-controls-toggle');
+    const virtualControls = document.getElementById('virtual-controls');
+    
+    virtualControlsToggle.addEventListener('change', (e) => {
+        virtualControlsEnabled = e.target.checked;
+        virtualControls.style.display = virtualControlsEnabled ? 'block' : 'none';
+    });
+
+    // Setup virtual arrow keys
+    const arrowKeys = {
+        'up-key': 38,    // Up arrow key code
+        'down-key': 40,  // Down arrow key code
+        'left-key': 37,  // Left arrow key code
+        'right-key': 39  // Right arrow key code
+    };
+
+    // Handle touch events for virtual keys
+    Object.keys(arrowKeys).forEach(keyId => {
+        const button = document.getElementById(keyId);
+        
+        // Handle both touch and click events
+        ['touchstart', 'mousedown'].forEach(eventType => {
+            button.addEventListener(eventType, (e) => {
+                e.preventDefault();
+                const event = new KeyboardEvent('keydown', {
+                    keyCode: arrowKeys[keyId]
+                });
+                document.dispatchEvent(event);
+            });
+        });
+    });
 } 
