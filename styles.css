@@ -244,4 +244,41 @@ button:disabled {
     .virtual-controls-toggle {
         display: none;
     }
+}
+
+/* Add specific mobile styling */
+@media (max-width: 767px) {
+    #virtual-controls {
+        margin: 15px auto;
+        width: 100%;
+        max-width: 300px; /* Limit maximum width on larger phones */
+    }
+
+    .arrow-keys {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .horizontal-keys {
+        display: flex;
+        gap: 60px; /* Increase gap between left and right buttons */
+        margin: 10px 0;
+    }
+
+    .arrow-key {
+        width: 60px;  /* Make buttons larger */
+        height: 60px;
+        font-size: 28px;
+        background: rgba(255, 255, 255, 0.2); /* Make buttons more visible */
+        border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    /* Add touch-specific styling */
+    .arrow-key:active,
+    .arrow-key:hover {
+        background: #4CAF50;
+        transform: scale(0.95);
+    }
 } 
