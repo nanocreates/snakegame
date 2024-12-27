@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+    font-family: Arial, sans-serif;
+}
+
+.game-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.score-container {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#gameCanvas {
+    background: #000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.controls {
+    margin-top: 1rem;
+}
+
+button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+.instructions {
+    color: #fff;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+#nickname-section {
+    margin-bottom: 1rem;
+}
+
+#nickname-input {
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+}
+
+#player-name {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.controls button {
+    margin: 0 5px;
+}
+
+button:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+}
+
+.nickname-buttons {
+    margin-top: 10px;
+}
+
+.nickname-buttons button {
+    margin: 0 5px;
+}
+
+/* Modify the guest button to have a different style */
+.nickname-buttons button:nth-child(2) {
+    background: #666;
+}
+
+.nickname-buttons button:nth-child(2):hover {
+    background: #555;
+}
+
+.game-modes {
+    margin: 15px 0;
+    color: white;
+}
+
+.game-modes select {
+    margin-left: 10px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.game-modes select:focus {
+    outline: none;
+}
+
+.game-modes option {
+    background: #4CAF50;
+}
+
+/* Add to score container */
+.score-container .mode-display {
+    font-size: 1rem;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* Add these styles for developer info */
+.developer-info {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.developer-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.developer-info h2 {
+    margin: 5px 0 10px 0;
+    font-size: 1.2rem;
+    color: #4CAF50;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.dev-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.social-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 6px 15px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: #4CAF50;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+} 

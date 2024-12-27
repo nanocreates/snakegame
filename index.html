@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Snake Game</h1>
+        <div id="nickname-section">
+            <input type="text" id="nickname-input" placeholder="Enter your nickname">
+            <div class="game-modes">
+                <label>Select Mode:</label>
+                <select id="game-mode">
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <div class="nickname-buttons">
+                <button onclick="setNickname()">Start</button>
+                <button onclick="playAsGuest()">Play as Guest</button>
+            </div>
+        </div>
+        <div id="game-section" style="display: none;">
+            <div class="score-container">
+                <span>Player: </span><span id="player-name"></span>
+                <br>
+                <span>Score: </span><span id="score">0</span>
+            </div>
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+            <div class="controls">
+                <button id="startButton" onclick="startGame()">Play</button>
+                <button id="pauseButton" onclick="togglePause()" style="display: none;">Pause</button>
+                <p class="instructions">Use arrow keys to move the snake</p>
+            </div>
+        </div>
+        <footer class="developer-info">
+            <p>Developed with ❤️ by</p>
+            <h2>Abdullahi A.</h2>
+            <div class="dev-links">
+                <a href="https://github.com/nanocreates" target="_blank" class="social-link">GitHub</a>
+            </div>
+        </footer>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html> 
